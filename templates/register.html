@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        .success{
+        color:green;
+        }
+        .error {
+            color:red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Реєстрація</h1>
+        <form method="post" action="/register">
+            <label for = "username">Логін:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for = "password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Зарееєструватися:</button>
+        </form>
+        <p>Уже Зарееєстровані?<a href="/login">Увійти</a></p>
+        
+        {% with message = get_flashed_messages(with_categories=true)%}
+            {% if message %}
+                {% for cat,mes  in massage %}
+                    <p class="{{cat}}">{{mes}}</p>
+                {% endfor %}
+            {% endif %}
+
+        {% endwith %}
+        
+    </div>
+</body>
+</html>
