@@ -43,7 +43,7 @@ def register():
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
         try:
-            cursor.execute("INSERT  INTO users(username, password) VALUE (?,?)",(username, password))
+            cursor.execute("INSERT  INTO users(username, password) VALUS (?,?)",(username, password))
             conn.commit()
             conn.close
             flash('Реєстрація успішна', 'success')
