@@ -43,7 +43,7 @@ def register():
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
         try:
-            cursor.execute("INSERT  INTO users(username, password) VALUS (?,?)",(username, password))
+            cursor.execute("INSERT  INTO users(username, password) VALUES (?,?)",(username, password))
             conn.commit()
             conn.close
             flash('Реєстрація успішна', 'success')
@@ -56,5 +56,25 @@ def register():
 def logout():
     session.pop('user', None)
     return redirect("/")
-
+@app.route('/add', methods = ["post","get"])
+def app():
+    if request.method == "POST":
+        name = request.form("name")
+        type = request.form("type")
+        price = request.form("price")
+        image = request.form("image")
+        conn = sqlite3.connect("")
+        cursor = conn.cursor()
+        try:
+            cursor.execute("""INSERT INTO table (name,type,price,image) (name,type,price,image)) VALUES(?,?,?,?) """, (name,type,price,image))
+            conn.commit()
+            conn.close
+        except KeyError as e:
+            flash(f"Помилка: Відсутнє поле {e}", "error")
+        except sqlite3.Error as e:
+            flash(f"Помилка бази даних: {e}", "error")
+        except Exception as e:
+            flash(f"Сталася помилка: {e}", "error")
+        return redirect(url_for("/add"))
+    return render_template('add.html')
 app.run()

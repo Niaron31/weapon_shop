@@ -4,20 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main</title>
+    <style>
+        body{
+            background-color: rgb(120, 63, 63);
+            padding: 0;
+            margin: 0;
+            font-family:Arial ;
+            display: flex;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            height: 100%;
+        }
+        .head{
+            background-color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+
+        }
+        a{
+            font-size: 20px;
+            padding: 10px;
+            color: rgb(120, 63, 63);
+        }
+        a:hover{
+            color: black;
+        }
+        .right p{
+            font-size: 15px;
+            margin: 0;
+            margin-top: 15px;
+        }
+        .right{
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+        }
+        .main{
+            background-color: aqua;
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="head"></div>
-    <div class="left">
-        <a href="/"><i class="fas fa-home"></i></a>
+    <div class="head">
+        <div class="left">
             
-        <a href="/add"><i class="fas fa-plus"></i></a>
-
+            <a href="/">home<i class="fas fa-home"></i></a>
+            <a href="/add">add<i class="fas fa-plus"></i></a>
+        </div>
+        <div class="right">
+            <p>Ласкаво просимо, {{username}}</p><br>
+            <a href="/logout"><i class="fas fa-sign-out-alt">live/i></a>
+        </div>
     </div>
-    <div class="right">
-        <a href="/logout"><i class="fas fa-sign-out-alt"></a>
-
-    </div>
-
     <div class="main"></div>
 </body>
 </html>

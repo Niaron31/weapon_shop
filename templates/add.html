@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        body{
+            background-color: rgb(120, 63, 63);
+            padding: 0;
+            margin: 0;
+            font-family:Arial ;
+            display: flex;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            height: 100%;
+        }
+        .head{
+            background-color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+
+        }
+        a{
+            font-size: 20px;
+            padding: 10px;
+            color: rgb(120, 63, 63);
+        }
+        a:hover{
+            color: black;
+        }
+        .right p{
+            font-size: 15px;
+            margin: 0;
+            margin-top: 15px;
+        }
+        .right{
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+        }
+        .main {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: cadetblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: blanchedalmond;
+            color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="left">
+            
+            <a href="/">home<i class="fas fa-home"></i></a>
+            <a href="/add">add<i class="fas fa-plus"></i></a>
+        </div>
+        <div class="right">
+            <p>Ласкаво просимо, {{username}}</p><br>
+            <a href="/logout"><i class="fas fa-sign-out-alt">live</i></a>
+        </div>
+    </div>
+    <div class="main">
+        <h2>Додати нову зброю</h2>
+        <form method="post" action="/add">
+            <label>Назва зброї</label>
+            <input type="text", placeholder="Назва" id="name" name="name">
+            <label>Тип</label>
+            <input type="text", placeholder="Тип" id="type" name="type">
+            <label>Ціна</label>
+            <input type="text", placeholder="Ціна" id="price" name="price">
+            <label>Картинка</label>
+            <input type="file", placeholder="Картинка" id="image" name="image">
+            <button>Додати</button>
+
+        </form>
+    </div>
+</body>
+</html>
