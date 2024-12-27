@@ -57,7 +57,7 @@ def logout():
     session.pop('user', None)
     return redirect("/")
 @app.route('/add', methods = ["post","get"])
-def app():
+def app1():
     if request.method == "POST":
         name = request.form("name")
         type = request.form("type")
