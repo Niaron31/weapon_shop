@@ -1,8 +1,13 @@
 from flask import Flask, flash, session, render_template, redirect, url_for, request
 import sqlite3
-from data import init_db
+from data import init_db, init_db
+import os
 app = Flask(__name__)
 app.secret_key = "Nigaron31"
+
+UPLOAD_FOLDER = 'static/uploads'
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 init_db()
 
@@ -59,12 +64,19 @@ def logout():
 @app.route('/add', methods = ["post","get"])
 def app1():
     if request.method == "POST":
-        name = request.form("name")
-        type = request.form("type")
+        owner_name = session['user']
+        name = request.form("nama")
         price = request.form("price")
         image = request.form("image")
-        conn = sqlite3.connect("")
+        if image:
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
+            image.save(image_path)
+            path = os.path.normpath(image_path).replace('\\','/')
+        conn = sqlite3.connect("info.db")
         cursor = conn.cursor()
+        cursor.execute(""" INSERT INTO into.db(owner_name,name,price,image_path)
+                       VALUES (?,?,?,?,?)""", (owner_name,name,price,image_path))
+
         try:
             cursor.execute("""INSERT INTO table (name,type,price,image) (name,type,price,image)) VALUES(?,?,?,?) """, (name,type,price,image))
             conn.commit()
