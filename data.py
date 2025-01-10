@@ -16,14 +16,14 @@ def init_db_info():
     conn = sqlite3.connect("info.db")
     cursor = conn.cursor()
     cursor.execute("""
-    CRETE TABLE IF NOT EXISTS info(
+    CREATE TABLE IF NOT EXISTS info(
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    owner_name TEXT NOT NULL,
                    name TEXT NOT NULL,
                    type TEXT NOT NULL,
                    price TEXT NOT NULL,
-                   imege_path TEXT
-                   )""")
-    
+                   image_path TEXT
+                   )
+    """)
     conn.commit()
     conn.close()

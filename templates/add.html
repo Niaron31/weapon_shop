@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body{
             background-color: rgb(120, 63, 63);
@@ -21,6 +23,7 @@
             display: flex;
             align-items: center;
             padding: 10px;
+            height: 40px;
 
         }
         a{
@@ -90,27 +93,32 @@
     <div class="head">
         <div class="left">
             
-            <a href="/">home<i class="fas fa-home"></i></a>
-            <a href="/add">add<i class="fas fa-plus"></i></a>
+            <a href="/"><i class="fas fa-home"></i></a>
+            <a href="/add"><i class="fas fa-plus"></i></a>
+            <a href="/roma"><i class="fas fa-ghost"></i></a>
+            <a href="/quiz"><i class="fas fa-circle"></i></a>
         </div>
         <div class="right">
             <p>Ласкаво просимо, {{username}}</p><br>
-            <a href="/logout"><i class="fas fa-sign-out-alt">live</i></a>
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
     <div class="main">
         <h2>Додати нову зброю</h2>
-        <form method="post" action="/add">
-            <label>Назва зброї</label>
-            <input type="text", placeholder="Назва" id="name" name="name">
-            <label>Тип</label>
-            <input type="text", placeholder="Тип" id="type" name="type">
-            <label>Ціна</label>
-            <input type="text", placeholder="Ціна" id="price" name="price">
-            <label>Картинка</label>
-            <input type="file", placeholder="Картинка" id="image" name="image">
-            <button>Додати</button>
-
+        <form method="post" action="/add" enctype="multipart/form-data">
+            <label for="name">Назва зброї</label>
+            <input type="text" placeholder="Назва" id="name" name="name" required>
+            
+            <label for="type">Тип</label>
+            <input type="text" placeholder="Тип" id="type" name="type" required>
+            
+            <label for="price">Ціна</label>
+            <input type="text" placeholder="Ціна" id="price" name="price" required>
+            
+            <label for="image">Картинка</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+            
+            <button type="submit">Додати</button>
         </form>
     </div>
 </body>

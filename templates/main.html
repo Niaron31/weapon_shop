@@ -1,23 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main</title>
+    <title>Main</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             padding: 0;
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
+            height: 100%;
+
         }
         .head {
-            background-color: cadetblue;
+            background-color: blanchedalmond;
+            height: 40px;
             padding: 10px;
             display: flex;
             align-items: center;
-            /* width: 100; */
         }
         .left {
             display: flex;
@@ -33,73 +34,65 @@
             margin: 0;
             font-size: 18px;
             color: black;
-            margin: 9px;
-
         }
         a {
-            color: black;
+            color: rgb(120, 63, 63);
             text-decoration: none;
             font-size: 20px;
             padding: 5px;
         }
         a:hover {
-            color: white;
+            color: black;
         }
-
         .main {
             height: 100vh;
-
-            padding: 0;
+            padding: 10;
             margin: 0;
-            background-color: rgb(165, 165, 165);
+            background-color: rgb(120, 63, 63);
         }
-
         .main p {
             margin: 0;
-
         }
-
-        
-        h2{
+        h2 {
             margin: 0;
         }
-        .conteiner{
+        .container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: left;
+            justify-content: flex-start;
+            padding: 20px;
         }
-        .card{
+        .card {
             background-color: blanchedalmond;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
-            width: calc(33.33%- 20px);
-            box-shadow:rgb(38, 57, 77) 0px 20px 30px -10px;
-
+            width: calc(33.33% - 20px);
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         }
-        .card img{
+        .card img {
             height: 250px;
-            width: auto;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
         }
-        .card-content{
+        .card-content {
             margin-top: 5px;
             padding: 10px;
         }
-        .card p{
+        .card p {
             color: cadetblue;
-            margin: 0;
-            padding: 0;
+            margin: 5px 0;
             font-size: 14px;
         }
-        .card h2{
+        .card h2 {
             color: rgb(53, 86, 87);
             font-weight: bold;
-            font-size: 10px;
-
+            font-size: 18px;
         }
-        .none{
-            color:gray ;
+        .none {
+            color: gray;
             text-align: center;
             padding: 20px;
             font-size: 20px;
@@ -109,38 +102,32 @@
 <body>
     <div class="head">
         <div class="left">
-            
             <a href="/"><i class="fas fa-home"></i></a>
             <a href="/add"><i class="fas fa-plus"></i></a>
-            <a href="/roma"><i class="fa-solid fa-ghost"></i></a>
+            <a href="/roma"><i class="fas fa-ghost"></i></a>
+            <a href="/quiz"><i class="fas fa-circle"></i></a>
         </div>
         <div class="right">
-            <p>Ласкаво просимо, {{username}}</p>
+            <p>Ласкаво просимо, {{ username }}</p>
             <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
         </div>
+    </div>
     <div class="main">
-
-    </div>
-
-    <div class="conteiner">
-        {% for item in items %}
-        <div class="card">
-            <img src=((item{5})) alt="Зображення зброї">
-            <div card-content>
-                <h2>{{item[2]}}</h2>
-                <p>Ціна : {{item[4]}}</p>
-                <p>Тип : {{item[3]}}</p>
-
+        <div class="container">
+            {% for item in items %}
+            <div class="card">
+                <img src="{{ item[5] }}" alt="Зображення зброї">
+                <div class="card-content">
+                    <h2>{{ item[2] }}</h2>
+                    <p>Ціна: {{ item[4] }}</p>
+                    <p>Тип: {{ item[3] }}</p>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-
+        {% if items|length == 0 %}
+        <p class="none">Поки нічого не додано</p>
+        {% endif %}
     </div>
-    {% if item|lenght == 0 %}
-    <p class="none">Поки нічого не додано</p>
-    {% endif %}
-    </div>
-
-
 </body>
 </html>
