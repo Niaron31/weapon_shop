@@ -97,6 +97,35 @@
             padding: 20px;
             font-size: 20px;
         }
+        footer{
+            padding-top:40px ;
+            padding-bottom: 20px;
+            background-color:rgb(99, 49, 49) ;
+            text-align: center;
+        }
+        .delete-btn { 
+            margin-top: 10px; 
+            padding: 8px 12px; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 14px; 
+            position: relative; 
+            top: -70px; 
+            right: -5   0px; 
+            left: 290px; 
+            margin:  0; 
+        } 
+ 
+        .delete-btn{ 
+            background-color: red; 
+ 
+        } 
+ 
+        .delete-btn:hover { 
+            background-color: darkred; 
+        }
     </style>
 </head>
 <body>
@@ -121,6 +150,11 @@
                     <h2>{{ item[2] }}</h2>
                     <p>Ціна: {{ item[4] }}</p>
                     <p>Тип: {{ item[3] }}</p>
+                    <form action="/delete/{{  item[0]  }}", method="post", style="margin-top: 10px;">
+                        <button type="submit" class="delete-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             {% endfor %}
@@ -129,5 +163,11 @@
         <p class="none">Поки нічого не додано</p>
         {% endif %}
     </div>
+    <footer>
+        
+        Проєкти виконані відповідно до вимог, усі матеріали додаються. Готовий відповісти на запитання або внести необхідні коригування.<br>
+        Зробив: Дудко Юрій<br><br>
+    Всі права захищено
+    </footer>
 </body>
 </html>

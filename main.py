@@ -127,9 +127,19 @@ def quiz():
         return render_template('quiz.html', quizzes=q_list)
     
 
-@app.route('/roma')
-def roma():
-        return render_template('ghost.html')
-    
+@app.route("/delete/<int:item_id>", methods=["POST"]) 
+def delete_item(item_id): 
+    if "user" not in session: 
+        return redirect('/login') 
+ 
+    username = session['user'] 
+    conn = sqlite3.connect("info.db") 
+    cursor = conn.cursor() 
+ 
+    cursor.execute("DELETE FROM info WHERE id = ? AND owner_name = ?", (item_id, username)) 
+    conn.commit() 
+    conn.close() 
+ 
+    return redirect("/")
 if __name__ == '__main__':
     app.run()
