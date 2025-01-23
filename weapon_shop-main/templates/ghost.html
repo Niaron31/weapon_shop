@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body{
+            background-color: rgb(120, 63, 63);
+            padding: 0;
+            margin: 0;
+            font-family:Arial ;
+            display: flex;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            height: 100%;
+        }
+        .head{
+            background-color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            height: 40px;
+
+        }
+        .left {
+            display: flex;
+            gap: 15px; 
+        }
+        .right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .right p {
+            margin: 0;
+            font-size: 18px;
+            color: black;
+            margin: 9px;
+
+        }
+        a {
+            color: rgb(120, 63, 63);
+            text-decoration: none;
+            font-size: 20px;
+            padding: 5px;
+        }
+        a:hover {
+            color: black;
+        }
+
+        .main {
+            height: 100vh;
+
+            padding: 0;
+            margin: 0;
+            background-color: rgb(120, 63, 63);
+            
+        }
+
+        .main p {
+            margin: 0;
+
+        }
+
+        
+        h2,h3,h4{
+            text-align: center;
+            padding: 5px;
+            margin: 0;
+        }
+        p{
+            text-align: center;
+        }
+        ul{
+            padding-left: 300px;
+            padding-right: 100px;
+
+        }
+        img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer{
+            padding-top:40px ;
+            padding-bottom: 20px;
+            background-color:rgb(99, 49, 49) ;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="left">
+            
+            <a href="/"><i class="fas fa-home"></i></a>
+            <a href="/add"><i class="fas fa-plus"></i></a>
+            <a href="/roma"><i class="fa-solid fa-ghost"></i></a>
+            <a href="/quiz"><i class="fas fa-circle"></i></a>
+
+        </div>
+        <div class="right">
+            <p>Ласкаво просимо, {{username}}</p>
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+
+    <div>
+        <h3>Проєкт 1</h3>
+        <h4>Kivi (Віконний проєкт)</h4>
+        <p>Це віконний проєкт суть якого реалізувати програму, яка працює наступним чином<br>Сума вимірювань пульсу у трьох спробах (до навантаження, одразу після та після короткого відпочинку)
+            в ідеалі має бути не більше 200 ударів на хвилину.
+            Ми пропонуємо дітям вимірювати свій пульс протягом 15 секунд,
+            і наводимо результат до ударів за хвилину множенням на 4:
+               S = 4 * (P1 + P2 + P3)
+            Що далі цей результат від ідеальних 200 ударів, то гірше.
+            Традиційно таблиці даються для величини, поділеної на 10.</p>
+        <h3>Проєкт 2</h3>
+        <h4>Аналіз даних (Економіка країн світу)</h4>
+        <p>Використовуючи бібліотеку Pandas, виконано:
+<ul>
+            <li>Фільтрацію та угруповання даних;</li>
+            <li>Очищення даних та створення нових ознак (Feature Engineering);</li>
+            <li>Візуалізацію основних показників економіки країн світу.<br>
+            Результати подано у вигляді графіків та таблиць для зручного аналізу.<br> Проєкт демонструє володіння основами роботи з великими масивами даних.</li>
+        </ul></p>
+        <img src="/static/country.jpg" style="margin-left: 267px;">
+        <h3>Проєкт 3</h3>
+        <h4>3D-гра (Майнкрафт) </h4>
+        <p>
+            Реалізовано гру з використанням Panda 3D, яка містить:
+<ul>
+            <li>Управління гравцем;</li>
+            <li>Основний ігровий режим;</li>
+            <li>Роботу з мапою, камерою та картою.<br>
+            Гра базується на принципах популярної гри Майнкрафт і дозволяє гравцеві взаємодіяти з об’єктами у віртуальному світі.</li>
+        </ul></p>
+        <h3>Проєкт 4</h3>
+        <h4>Створення сайтів</h4>
+        <p>
+            Розроблено динамічний веб-сайт із використанням:
+<ul>
+
+<li>HTML для структури;</li>
+<li>CSS для оформлення сторінок;</li>
+<li>SQL для роботи з базами даних (введення та структурування інформації);</li>
+<li>Шаблонів та сесій для обробки даних.<br>
+Сайт дозволяє динамічно взаємодіяти з користувачами, зберігати та обробляти інформацію.</li></ul></p>
+    </div>
+    <footer>
+        
+        Проєкти виконані відповідно до вимог, усі матеріали додаються. Готовий відповісти на запитання або внести необхідні коригування.<br>
+        Зробив: Дудко Юрій<br><br>
+    Всі права захищено
+    </footer>
+</body>
+</html>
