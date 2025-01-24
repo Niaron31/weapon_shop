@@ -12,13 +12,14 @@
             color:red;
         }
         body{
-        background-color: rgb(120, 63, 63);
+        background-color: rgb(60, 60, 60);
         padding: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
+
         }
         .container{
             background-color: blanchedalmond;
@@ -44,11 +45,20 @@
             height: 35px;
             background-color: rgb(255, 255, 255);
         }
+        .top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Реєстрація</h1>
+        <div class="top">
+            <img src="static/logo.png" style="height: 90px;">
+            <h1>Реєстрація</h1>
+        </div>
         <form method="post" action="/register">
             <label for = "username">Логін:</label>
             <input type="text" id="username" name="username" required>
@@ -56,7 +66,7 @@
             <label for = "password">Пароль:</label>
             <input type="password" id="password" name="password" required>
             <br>
-            <button type="submit">Зарееєструватися:</button>
+            <button type="submit">Зарееєструватися</button>
         </form>
         <p>Уже Зарееєстровані?<a href="/login">Увійти</a></p>
         

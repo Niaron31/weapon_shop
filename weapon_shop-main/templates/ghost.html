@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body{
-            background-color: rgb(120, 63, 63);
+            background-color: rgb(60, 60, 60);
             padding: 0;
             margin: 0;
             font-family:Arial ;
@@ -17,6 +17,8 @@
             align-items: right;
             justify-content: center;
             height: 100%;
+           color: rgb(151, 145, 145);
+
         }
         .head{
             background-color: blanchedalmond;
@@ -44,7 +46,7 @@
 
         }
         a {
-            color: rgb(120, 63, 63);
+            color: rgb(60, 60, 60);
             text-decoration: none;
             font-size: 20px;
             padding: 5px;
@@ -58,7 +60,7 @@
 
             padding: 0;
             margin: 0;
-            background-color: rgb(120, 63, 63);
+            background-color: rgb(60, 60, 60);
             
         }
 
@@ -83,13 +85,14 @@
         }
         img{
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
         footer{
             padding-top:40px ;
             padding-bottom: 20px;
-            background-color:rgb(99, 49, 49) ;
+            background-color:rgb(39, 38, 38);
             text-align: center;
         }
         
@@ -101,12 +104,12 @@
             
             <a href="/"><i class="fas fa-home"></i></a>
             <a href="/add"><i class="fas fa-plus"></i></a>
-            <a href="/roma"><i class="fa-solid fa-ghost"></i></a>
-            <a href="/quiz"><i class="fas fa-circle"></i></a>
+            <a href="/project"><i class="fas fa-circle"></i></a>
 
         </div>
         <div class="right">
-            <p>Ласкаво просимо, {{username}}</p>
+            <img src="static/logo.png" style="height: 50px;">
+            <p>{{ username }}</p>
             <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
@@ -130,7 +133,7 @@
             <li>Візуалізацію основних показників економіки країн світу.<br>
             Результати подано у вигляді графіків та таблиць для зручного аналізу.<br> Проєкт демонструє володіння основами роботи з великими масивами даних.</li>
         </ul></p>
-        <img src="/static/country.jpg" style="margin-left: 267px;">
+        <img src="/static/country.jpg" style="margin-left: 267px; width: 600px;">
         <h3>Проєкт 3</h3>
         <h4>3D-гра (Майнкрафт) </h4>
         <p>
@@ -141,6 +144,8 @@
             <li>Роботу з мапою, камерою та картою.<br>
             Гра базується на принципах популярної гри Майнкрафт і дозволяє гравцеві взаємодіяти з об’єктами у віртуальному світі.</li>
         </ul></p>
+        <img src="/static/Знімок екрана 2025-01-17 о 09.16.58.png" style="margin-left: 267px; width: 600px;">
+
         <h3>Проєкт 4</h3>
         <h4>Створення сайтів</h4>
         <p>

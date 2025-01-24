@@ -11,6 +11,7 @@
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
             height: 100%;
+            color: rgb(151, 145, 145);
 
         }
         .head {
@@ -36,7 +37,7 @@
             color: black;
         }
         a {
-            color: rgb(120, 63, 63);
+            color: rgb(60, 60, 60);
             text-decoration: none;
             font-size: 20px;
             padding: 5px;
@@ -48,7 +49,7 @@
             height: 100vh;
             padding: 10;
             margin: 0;
-            background-color: rgb(120, 63, 63);
+            background-color: rgb(60, 60, 60);
         }
         .main p {
             margin: 0;
@@ -100,7 +101,7 @@
         footer{
             padding-top:40px ;
             padding-bottom: 20px;
-            background-color:rgb(99, 49, 49) ;
+            background-color:rgb(39, 38, 38) ;
             text-align: center;
         }
         .delete-btn { 
@@ -133,10 +134,11 @@
         <div class="left">
             <a href="/"><i class="fas fa-home"></i></a>
             <a href="/add"><i class="fas fa-plus"></i></a>
-            <a href="/ghost"><i class="fas fa-ghost"></i></a>
-            <a href="/quiz"><i class="fas fa-circle"></i></a>
+            <a href="/project"><i class="fas fa-ghost"></i></a>
         </div>
         <div class="right">
+            <img src="static/logo.png" style="height: 50px;">
+
             <p>Ласкаво просимо, {{ username }}</p>
             <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
         </div>
@@ -149,7 +151,7 @@
                 <div class="card-content">
                     <h2>{{ item[2] }}</h2>
                     <p>Ціна: {{ item[4] }}</p>
-                    <p>Тип: {{ item[3] }}</p>
+                    <p>Короткий опис: {{ item[3] }}</p>
                     <form action="/delete/{{  item[0]  }}", method="post", style="margin-top: 10px;">
                         <button type="submit" class="delete-btn">
                             <i class="fas fa-trash"></i>

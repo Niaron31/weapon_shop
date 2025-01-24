@@ -120,12 +120,6 @@ def add():
     return render_template('add.html',username=  session['user'] )
 
 
-@app.route('/quiz', methods=['GET', 'POST'])
-def quiz():
-    if request.method == 'GET':
-        q_list = get_quizzes()
-        return render_template('quiz.html', quizzes=q_list)
-    
 
 @app.route("/delete/<int:item_id>", methods=["POST"]) 
 def delete_item(item_id): 
@@ -141,5 +135,9 @@ def delete_item(item_id):
     conn.close() 
  
     return redirect("/")
+
+@app.route("/project")
+def project():
+    return render_template("ghost.html")
 if __name__ == '__main__':
-    app.run()
+    app.run(port=3333)
